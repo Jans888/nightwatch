@@ -1,0 +1,35 @@
+module.exports = {
+    "Test file": function(browser) {
+        let unitedCom = browser.page.unitedCom();
+        const wait = 2 * 1000
+        browser.windowMaximize()
+        unitedCom.navigate()
+        .assert.title('United Airlines - Airline Tickets, Travel Deals and Flights')
+        .pause(wait)
+        .click('@bookFlightForm')
+        .pause(wait)
+        .clearValue('@bookFlightOriginInput')
+        .setValue('@bookFlightOriginInput', 'New York, NY, US (JFK)')
+        .pause(wait)
+        .setValue('@bookFlightDestinationInput', 'Miami, FL, US (MIA - All Airports)')
+        .pause(wait)
+        .click('@select')
+        .pause(wait)
+        .clearValue('@DepartDate')
+        .setValue('@DepartDate', 'Aug 20')
+        .pause(wait)
+        .click('@class')
+        .click('@economy')
+        .pause(wait)
+        .click('@findFlights')
+        .waitForElementVisible('body', 5 * 1000)
+        .pause(wait)
+        .click('@sortAndFilter')
+        .pause(wait)
+        .click('@sortByEconomy')
+        .pause(wait)
+        .moveToElement('@apply', 10, 10)
+        .waitForElementVisible('.atm-c-btn--primary', 500)
+        .pause(wait)
+    }
+}
