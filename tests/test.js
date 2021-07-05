@@ -1,7 +1,16 @@
 module.exports = {
+
+  before : function(browser) {
+    console.log('The tests are started');
+  },
+
+  after: function(browser) {
+    console.log('The tests are finished')
+  },
+
     "Test file": function(browser) {
         let unitedCom = browser.page.unitedCom();
-        const wait = 2 * 1000
+        const wait = 1 * 1000
         browser.windowMaximize()
         unitedCom.navigate()
         .assert.title('United Airlines - Airline Tickets, Travel Deals and Flights')
@@ -31,5 +40,17 @@ module.exports = {
         .moveToElement('@apply', 10, 10)
         .waitForElementVisible('.atm-c-btn--primary', 500)
         .pause(wait)
+
+        browser.elements('css selector','#flightResults-content > div.app-components-Shopping-ResultGrid-styles__flightsContainer--3sApV', function (result) {
+          //var jsonString = "";
+          els = result.value;
+          var i = 0;
+          els.forEach(function(el, j, elz){
+            browser.elementIdText(el.ELEMENT, function(text) {
+              //jsonString += text;
+              console.log(text)
+            })
+          })
+        })
     }
 }

@@ -11,7 +11,7 @@ module.exports = {
   page_objects_path: "./page-objects",
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
-  custom_commands_path:  './node_modules/nightwatch-xhr/es5/commands',
+  custom_commands_path:  ['./node_modules/nightwatch-xhr/es5/commands', './custom-commands' ],
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-assertions
   custom_assertions_path: './node_modules/nightwatch-xhr/es5/assertions',
