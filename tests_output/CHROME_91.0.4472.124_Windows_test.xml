@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
+<testsuites errors="1"
             failures="0"
             tests="1">
 
   <testsuite name="test"
-    errors="0" failures="0" hostname="" id="" package="test" skipped="0"
-    tests="1" time="30.48" timestamp="">
+    errors="1" failures="0" hostname="" id="" package="test" skipped="0"
+    tests="1" time="27.43" timestamp="">
   
-    <testcase name="Test file" classname="test" time="30.48" assertions="3">
+    <testcase name="Test file" classname="test" time="27.43" assertions="3">
 
     
 
     
 
+    
+    <error message="Error while running &#34;elementIdText&#34; command: Unexpected identifier" type="error"><![CDATA[
+    SyntaxError: Error while running &#34;elementIdText&#34; command: Unexpected identifier
+    at NightwatchAPI.&lt;anonymous&gt; (C:\Projects\nightwatch\tests\test.js:53:103)
+    at Function.makePromise (C:\Projects\nightwatch\node_modules\nightwatch\lib\utils\index.js:136:28)
+    at C:\Projects\nightwatch\node_modules\nightwatch\lib\index.js:135:62
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    ]]></error>
     
     </testcase>
   
 
+  
+    <system-err>
+        SyntaxError: Error while running &#34;elementIdText&#34; command: Unexpected identifier
+       at NightwatchAPI.&lt;anonymous&gt; (C:\Projects\nightwatch\tests\test.js:53:103)
+       at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    </system-err>
   
 
     
