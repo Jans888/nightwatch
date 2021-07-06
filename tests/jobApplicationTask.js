@@ -40,7 +40,7 @@ module.exports = {
         .pause(wait)
         .moveToElement('@apply', 10, 10)
         .waitForElementVisible('.atm-c-btn--primary', 500)
-        .pause(wait)
+        .pause()
 
         browser.elements('css selector','#flightResults-content > div.app-components-Shopping-ResultGrid-styles__flightsContainer--3sApV', function (result) {
           els = result.value;
